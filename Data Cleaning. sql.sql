@@ -3,22 +3,32 @@
 SELECT *
 FROM layoffs;
 
+-- first thing we want to do is create staging table. This is one we will work in and clean the data . we want table with the raw data in case something happens
+
+CREATE TABLE layoffs_staging
+LIKE layoffs;
+
 -- 1. Remove Duplicate
 -- 2. Standerdize The Data
 -- 3. Null Values Or blank values
 -- 4. Remove Any Columns
 
-CREATE TABLE layoffs_staging
-LIKE layoffs;
-
 INSERT INTO layoffs_staging
 SELECT *
 FROM layoffs;
+
+-- 1. Remove Duplicates
+
+# FIRST lets check for duplicates
+
+SELECT *
+FROM layoffs_staging;
 
 SELECT *,
 ROW_NUMBER() OVER(PARTITION BY company, location, industry, total_laid_off, percentage_laid_off, `date`, stage, country, funds_raised_millions) AS row_num
 FROM layoffs_staging;
 
+-- these are the ones we want to delete where the row number is > 1 or 2 or greater essentially
 WITH  duplicate_cte AS
 (
 SELECT *,
@@ -29,6 +39,12 @@ SELECT *
 FROM duplicate_cte
 WHERE row_num >1;
 
+
+-- one solution which i think good one  is create a new column  and add the number in. Then delete where row numbers are over 2 then delete the column
+-- so let's do it
+
+ALTER TABLE layoffs_staging ADD row_num INT;
+  
 CREATE TABLE `layoffs_staging2` (
   `company` text,
   `location` text,
@@ -51,9 +67,14 @@ SELECT *
 FROM layoffs_staging2
 WHERE row_num > 1;
 
+-- now that we have this  we can delete row were row_num is greater then 2
+
 DELETE 
 FROM layoffs_staging2
 WHERE row_num > 1;
+
+
+-- 2. Standerdize Data
 
 SELECT company
 FROM layoffs_staging2;
@@ -102,6 +123,7 @@ SELECT DISTINCT country
 FROM layoffs_staging2
 ORDER BY 1;
 
+  -- if we look at industry is look  like we some null and empty rows
 SELECT  DISTINCT industry
 FROM layoffs_staging2
 WHERE industry IS NULL
