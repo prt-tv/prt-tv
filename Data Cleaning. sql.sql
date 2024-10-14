@@ -1,5 +1,7 @@
 -- SQL Project-- Data Cleaning
 
+-- Skill used  : Windows Function, CTE's, Self Joins, String Functions,
+
 SELECT *
 FROM layoffs;
 
@@ -15,7 +17,7 @@ LIKE layoffs;
 
 INSERT INTO layoffs_staging
 SELECT *
-FROM layoffs;
+FROM layoffs
 
 -- 1. Remove Duplicates
 
