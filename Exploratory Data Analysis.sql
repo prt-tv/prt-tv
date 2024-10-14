@@ -6,7 +6,7 @@
 
 -- with this info we are just going to look around see what we find!
 
--- SKILL use : Aggregate Functions, CTE, Sorting,  Windows Function, Substring
+-- SKILL use : Aggregate Functions, CTE, Sorting,  Windows Function, String Functions
 
 SELECT *
 FROM layoffs_staging2;
