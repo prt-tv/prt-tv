@@ -1,6 +1,6 @@
 -- SQL Project-- Data Cleaning
 
--- Skill used  : Windows Function, CTE's, Self Joins, String Functions,
+-- Skill used  : Windows Function, CTE's, Self Joins, String Functions, Filtering Functions
 
 SELECT *
 FROM layoffs;
