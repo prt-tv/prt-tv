@@ -1,3 +1,5 @@
+SKILL USE :- Aggregate Function
+
 SELECT *
 FROM spotify_staging;
 
