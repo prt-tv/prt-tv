@@ -35,6 +35,8 @@ SELECT *
 FROM duplicate_cte
 WHERE row_num > 1;
 
+-- There Is no duplicate Found in Dataset 
+
 SELECT  Track 
 FROM spotify_staging
 WHERE Track LIKE 'wo%';
