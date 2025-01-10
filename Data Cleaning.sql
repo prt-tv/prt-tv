@@ -14,6 +14,8 @@ INSERT INTO spotify_staging
 SELECT *
 FROM `most streamed spotify songs 2024`;
 
+-- Removing Duplicate
+
 SELECT *,
 ROW_NUMBER() OVER(PARTITION BY Track, `Album Name`, Artist, `Release Date`, ISRC, `All Time Rank`, `Track Score`, `Spotify Streams`,
 `Spotify Playlist Count`, `Spotify Playlist Reach`,`Spotify Popularity`, `YouTube Likes`, `YouTube Views`, `YouTube Playlist Reach`,
@@ -36,6 +38,8 @@ FROM duplicate_cte
 WHERE row_num > 1;
 
 -- There Is no duplicate Found in Dataset 
+
+-- Standardize Data
 
 SELECT  Track 
 FROM spotify_staging
