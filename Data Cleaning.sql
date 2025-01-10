@@ -1,3 +1,7 @@
+-- SQL Project:- Data Cleaning
+
+-- Skill Use:- 
+
 SELECT *
 FROM `most streamed spotify songs 2024`;
 
