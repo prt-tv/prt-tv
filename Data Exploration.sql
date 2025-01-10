@@ -1,4 +1,4 @@
-SKILL USE :- Aggregate Functions, CTEs, Window Functions, SubQueries, Filter Functions, Sort Functions
+-- SKILL USE :- Aggregate Functions, CTEs, Window Functions, SubQueries, Filter Functions, Sort Functions
 
 SELECT *
 FROM spotify_staging;
