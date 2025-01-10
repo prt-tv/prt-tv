@@ -5,6 +5,8 @@
 SELECT *
 FROM `most streamed spotify songs 2024`;
 
+-- first thing we want to do is create staging table. This is one we will work in and clean the data . we want table with the raw data in case something happens
+
 CREATE TABLE spotify_staging
 LIKE `most streamed spotify songs 2024`;
 
