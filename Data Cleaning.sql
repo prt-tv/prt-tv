@@ -1,6 +1,6 @@
 -- SQL Project:- Data Cleaning
 
--- Skill Use:- 
+-- Skill Use:- CTEs, Window Function, 
 
 SELECT *
 FROM `most streamed spotify songs 2024`;
