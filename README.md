@@ -5,8 +5,7 @@ Passionate about cleaning, analyzing, and visualizing data to help businesses ma
 
 🌱 Currently building my skills through hands-on projects and real-world datasets.
 
-🔗 Check out my portfolio website: [prt-tv.github.io/prt_thv](https://prt-tv.github.io/prt_thv)
-<a href="./Resume.pdf" target="_blank" rel="noopener noreferrer">Download My Resume</a>
+🔗 Check out my portfolio website: [prt-tv.github.io/prt_thv](https://prt-tv.github.io/prt_thv]
 
 
 ## 🛠 Skills & Tools
