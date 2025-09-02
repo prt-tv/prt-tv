@@ -1,3 +1,5 @@
+-- Exploratory Data Analysis
+
 SELECT *
 FROM onlineretail;
 
