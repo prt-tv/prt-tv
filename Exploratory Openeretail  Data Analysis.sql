@@ -27,19 +27,19 @@ FROM onlineretail;
 SELECT ROUND(SUM(Quantity * UnitPrice) / COUNT(DISTINCT InvoiceNo), 2) AS AvgOrderValue
 FROM onlineretail;
 
+--Top 10 Best-Selling Products (by quantity)
 SELECT Country, ROUND(SUM(Quantity * UnitPrice), 2) AS Revenue
 FROM onlineretail
 GROUP BY Country
 ORDER BY Revenue DESC
 LIMIT 10;
 
--- Time-Based Analysis
+-- Time-Based Analysis -- Monthly Sales Trend (Revenue per month)
 SELECT DATE_FORMAT(InvoiceDate, '%Y-%m') AS Month, 
       ROUND(SUM(Quantity * UnitPrice), 2) AS Revenue
 FROM onlineretail
 GROUP BY Month
 ORDER BY Month;
-
 
 SELECT DATE(InvoiceDate) AS Date, 
        ROUND(SUM(UnitPrice), 2) AS Revenue
@@ -81,6 +81,7 @@ GROUP BY CustomerID
 ORDER BY OrdersCount DESC
 LIMIT 10;
 
+--Top 10 Customers by Total Spend
 SELECT CustomerID, ROUND(SUM(UnitPrice), 2) AS TotalSpent
 FROM onlineretail
 GROUP BY CustomerID
